@@ -50,12 +50,12 @@ app.post("/send", (req, res) => {
     status: "confirmed",
     attendees: [
       {
-        name: "Cephas Chapa",
-        email: "cephaschapa@gmail.com",
+        name: "name",
+        email: "email",
       },
       {
-        name: "cjr",
-        email: "cephaschapa@gmail.com",
+        name: "name",
+        email: "email",
       },
     ],
     start: req.body.start_date,
@@ -65,8 +65,8 @@ app.post("/send", (req, res) => {
     description: req.body.message,
     location: req.body.message,
     organizer: {
-      name: "Cephas Chapa",
-      email: "cephaschapa@gmail.com",
+      name: "organiser_name",
+      email: "organizer_email",
     },
     url: req.body.url,
   });
@@ -76,12 +76,12 @@ app.post("/send", (req, res) => {
   console.log(calenderFile);
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.mailgun.org",
+    host: "host_address",
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "support@report.probasegroup.com", // generated ethereal user
-      pass: "pbs_support", // generated ethereal password
+      user: "username", // generated ethereal user
+      pass: "password", // generated ethereal password
     },
     // tls: {
     //   rejectUnauthorized: false,
@@ -90,7 +90,7 @@ app.post("/send", (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Cephas Chapa" <cephaschapa@gmail.com>', // sender address
+    from: '"Full Names" <email_address_of_sender>', // sender address
     to: recepients, // list of receivers
     subject: event.summary, // Subject line
     text: "Attached to this meeting is a calender", // plain text body
