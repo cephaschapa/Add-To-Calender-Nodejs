@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acme Web Design</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="public/css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+        <h3>MEETINGS</h3>
+        <p>Invitation form</p>
+      </div>
+      <div class="contact">
+        <h3>Setup Meeting</h3>
+        {{msg}}
+        <form method="POST" action="send">
+          <p>
+            <label>Title</label>
+            <input type="text" name="title">
+          </p>
+          <p>
+            <label>Start Date</label>
+            <input type="datetime-local" name="start_date" id="">
+          </p>
+          <p>
+            <label>End Date</label>
+            <input type="datetime-local" name="end_date" id="">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" multiple>
+          </p>
+
+          <p class="full">
+            <label>Description</label>
+            <textarea name="message" rows="5"></textarea>
+          </p>
+          <p class="full">
+            <label>link</label>
+            <input type="url" name="url" id="">
+          </p>
+          <p>
+            <label>Location</label>
+            <input type="text" name="location">
+          </p>
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    let multiple = document.getElementById("multiple").multiple;
+    if (!multiple) {
+      console.log("ok")
+    }
+  </script>
+</body>
+
+</html>
